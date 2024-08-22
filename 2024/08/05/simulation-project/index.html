@@ -18,18 +18,20 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="怎么才能把这个project讲的通俗易懂啊！我觉得太难了光是把问题讲明白就要花费九牛二虎之力。。然后还要附赠prof的逆天指导 This is a project for the course Simulation Methods for Optimization and Learning at PKU Globex 2024. The question is basically to find">
+        <meta name="description" content="This is a project for the course Simulation Methods for Optimization and Learning at PKU Globex 2024. The question is basically to find the maximum of Sharpe Ratio, which is an expression in finance.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stochastic Simulation Project">
 <meta property="og:url" content="http://example.com/2024/08/05/simulation-project/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="怎么才能把这个project讲的通俗易懂啊！我觉得太难了光是把问题讲明白就要花费九牛二虎之力。。然后还要附赠prof的逆天指导 This is a project for the course Simulation Methods for Optimization and Learning at PKU Globex 2024. The question is basically to find">
+<meta property="og:description" content="This is a project for the course Simulation Methods for Optimization and Learning at PKU Globex 2024. The question is basically to find the maximum of Sharpe Ratio, which is an expression in finance.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/simulation-function.png">
 <meta property="article:published_time" content="2024-08-05T13:52:48.000Z">
-<meta property="article:modified_time" content="2024-08-19T13:21:11.997Z">
+<meta property="article:modified_time" content="2024-08-22T06:36:17.541Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Machine Learning">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/simulation-function.png">
     
     
     <!--- Icon Part-->
@@ -627,8 +629,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-08-19 21:21:11</span>
-            <span class="mobile">2024-08-19 21:21:11</span>
+            <span class="desktop">2024-08-22 14:36:17</span>
+            <span class="mobile">2024-08-22 14:36:17</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -682,15 +684,16 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <p>怎么才能把这个project讲的通俗易懂啊！我觉得太难了<br>光是把问题讲明白就要花费九牛二虎之力。。<br>然后还要附赠prof的逆天指导</p>
-<p>This is a project for the course Simulation Methods for Optimization and Learning at PKU Globex 2024. The question is basically to find the maximum of Sharpe Ratio, which is an expression in finance. The setting includes many stochastic factors to simulate the uncertainty in market.</p>
-<p>I tried to simply conclude the expression in one sentence but I found I can’t. So here’s the detail.</p>
-<p>渲染得好丑啊啊！！还是插图片吧呵呵<br>呃怎么又不丑了</p>
-<p>An investor has total capital of 1 that she wants to invest in n companies. The run time for the investment is t time units. The market value of company i at time t is given by \(X_i\). Let \(x_i \in R, i &#x3D; 1,2,3\) be given thresholds. Company i will not be able to generate any profit if \(X_i&lt;x_i\). In case \(X_i \leq x_i\), the return on the investment is given by \(Y_i\). Investing a fraction pi of the capital yields expected return<br>$$ p_i \mathbb{E}[Y_i1_{X_i\leq x_i}] $$<br>for company \(i\), where<br>$$ \sum_{i&#x3D;1}^{n} p_i &#x3D; 1, ,  0 \leq p_i \leq 1. $$<br>Assume that \(n&#x3D;3\) and \(Y_i\) are independent uniformly distributed on \([0,X_i]\), and we let<br>$$ X_i &#x3D; \frac{\rho V + \sqrt{1-\rho ^{2}}\eta_i}{max(W,1)},  1\leq i\leq n, $$<br>with \(\eta_i\) normally distributed with mean 0 and variance \(i\) modelling the company’s idiosyncratic risk, \(V\) standard normally distributed modelling the common factor that affects the economy, and \(W\) exponentially distributed with rate \(1&#x2F;0.3\) modelling common market shocks. The variables V, W, and \(\eta_i\)’s are all independent. Set the weight factor \(\rho &#x3D; 0.6\), and the thresholds \(x_1 &#x3D; 2\), \(x_2 &#x3D; 3\), and \(x_3 &#x3D; 1\).<br>The investor wants to find the optimal investment strategy by maximizing the risk adjusted performance of the investment (also known as Sharpe ratio), which leads to</p>
-<p>此处有一个渲染不出来的公式，不行就插图片吧。。</p>
-<p>Our goal is to find</p>
-<p>$$ \max_{p_1, p_2, p_3 \geq 0, \sum p_i &#x3D; 1} J(p) $$</p>
-
+            <p>This is a project for the course <em>Simulation Methods for Optimization and Learning at PKU Globex 2024</em>. The question is basically to find the maximum of Sharpe Ratio, which is an expression in finance. The setting includes many stochastic factors to simulate the uncertainty in market.</p>
+<p>To make the story short, the problem is to find the maximum of the expression:<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/simulation-function.png"
+                      alt="target function"
+                ></p>
+<p>The annoying part is that every X and every Y are random variables, with their distribution related with the value of vector p. Thus, we cannot simply use derivative and find stationary point as we do in secondary school.</p>
+<p>Instead we resort to computer simulation and optimization, build a Martingale difference noise model, and use other methods such as SPSA. Please find detailed report and source code in following github repo.</p>
+<a class="button  center large" target="_blank" rel="noopener" href='https://github.com/shirley430316/simulation-proj1-group18-globex2024' title='project result'><i class='fa-solid fa-download'></i> project result</a>
         </div>
 
         
@@ -704,7 +707,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-08-19 21:21:11
+                    :</strong> 2024-08-22 14:36:17
             </li>
         
         <li>
