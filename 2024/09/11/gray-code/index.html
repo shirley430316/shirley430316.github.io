@@ -18,19 +18,22 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="The new semester finally came. I become a sophomore, unbelievably! On the first lecture of COMP2119 Introduction to Data Structures and Algorithm, Prof. Kao played a game. He took out 3 coins and thre">
+        <meta name="description" content="The new semester finally came. I become a sophomore, unbelievably! On the first lecture of COMP2119 Introduction to Data Structures and Algorithm, Prof. Kao played a game. He took out 3 coins and flip">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gray Code">
 <meta property="og:url" content="http://example.com/2024/09/11/gray-code/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="The new semester finally came. I become a sophomore, unbelievably! On the first lecture of COMP2119 Introduction to Data Structures and Algorithm, Prof. Kao played a game. He took out 3 coins and thre">
+<meta property="og:description" content="The new semester finally came. I become a sophomore, unbelievably! On the first lecture of COMP2119 Introduction to Data Structures and Algorithm, Prof. Kao played a game. He took out 3 coins and flip">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/gray-coin-rule.jpeg">
-<meta property="og:image" content="http://example.com/image/gray-three-coin-cases.jpeg">
-<meta property="og:image" content="http://example.com/image/gray-three-coin-solution1.jpeg">
-<meta property="og:image" content="http://example.com/image/gray-three-coin-solution2.jpeg">
+<meta property="og:image" content="http://example.com/images/gray-three-coin-cases.jpeg">
+<meta property="og:image" content="http://example.com/images/gray-three-coin-solution1.jpeg">
+<meta property="og:image" content="http://example.com/images/gray-three-coin-solution2.jpeg">
+<meta property="og:image" content="http://example.com/images/gray-setting.png">
+<meta property="og:image" content="http://example.com/images/gray-code-table.png">
+<meta property="og:image" content="http://example.com/images/gray-proof.png">
 <meta property="article:published_time" content="2024-09-10T16:34:46.000Z">
-<meta property="article:modified_time" content="2024-09-11T09:45:18.803Z">
+<meta property="article:modified_time" content="2024-09-11T13:11:44.835Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary">
@@ -643,8 +646,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-11 17:45:18</span>
-            <span class="mobile">2024-09-11 17:45:18</span>
+            <span class="desktop">2024-09-11 21:11:44</span>
+            <span class="mobile">2024-09-11 21:11:44</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -700,7 +703,7 @@
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
             <p>The new semester finally came. I become a sophomore, unbelievably!</p>
 <p>On the first lecture of COMP2119 Introduction to Data Structures and Algorithm, Prof. Kao played a game.</p>
-<p>He took out 3 coins and threw them randomly. The result should be 2 cases. If the 3 coins are on the same face, we win. Else, we can name a coin and flip it. We are not able to see the coins until the game ends. BTW, he is such an amazing professor.</p>
+<p>He took out 3 coins and flipped them randomly. The result should be 2 cases. If the 3 coins are on the same face, we win. Else, game continues. We can name a coin and flip it. We are not able to see the coins until the game ends. BTW, he is such an amazing professor.</p>
 <img  
                      lazyload
                      src="/images/loading.svg"
@@ -708,31 +711,60 @@
                       alt="coin-problem-rule"
                 >
 
-<p>Question: Is there a set of process, which will definitely lead to success?</p>
-<h4 id="1-Coin-Problem"><a href="#1-Coin-Problem" class="headerlink" title="1. Coin Problem"></a>1. Coin Problem</h4><h5 id="1-1-Three-Coins"><a href="#1-1-Three-Coins" class="headerlink" title="1.1 Three Coins"></a>1.1 Three Coins</h5><p>Two strategies were mentioned in the lecture. One is 1-&gt;2-&gt;1-&gt;2-&gt;1, and the second one is 1-&gt;2-&gt;1.</p>
+<p><strong>Question: Is there a set of process, which will definitely lead to success?</strong></p>
+<h4 id="1-Coin-Problem"><a href="#1-Coin-Problem" class="headerlink" title="1 Coin Problem"></a>1 Coin Problem</h4><h5 id="1-1-Three-Coins"><a href="#1-1-Three-Coins" class="headerlink" title="1.1 Three Coins"></a>1.1 Three Coins</h5><p>Two strategies were mentioned by students in the lecture. One is 1-&gt;2-&gt;1-&gt;2-&gt;1. Another is 1-&gt;2-&gt;1.</p>
 <p>To evaluate a strategy is good or not, we have check whether it works, and calculate its total fliping times under best and worst scenario. We could abstract the condition of coins into three types, all of which has same possibility.</p>
 <img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/image/gray-three-coin-cases.jpeg"
+                     data-src="/images/gray-three-coin-cases.jpeg"
                       alt="three-coins-conditions"
                 >
 
 <p>For the first solution:<br><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/image/gray-three-coin-solution1.jpeg"
+                     data-src="/images/gray-three-coin-solution1.jpeg"
                       alt="analysis for solution 1"
                 ></p>
 <p>For the second solution:<br><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/image/gray-three-coin-solution2.jpeg"
+                     data-src="/images/gray-three-coin-solution2.jpeg"
                       alt="analysis for solution 2"
                 ></p>
 <p>Thus, we claim the second solution is the best for 3 coins. (Actually it was me who accidentally sat in the first row that came up with this solution. Proud of myself ^_^)</p>
 <p>However, what if coins are more than three?</p>
-<h5 id="1-2-Four-Coins"><a href="#1-2-Four-Coins" class="headerlink" title="1.2 Four Coins"></a>1.2 Four Coins</h5>
+<h5 id="1-2-Four-Coins"><a href="#1-2-Four-Coins" class="headerlink" title="1.2 Four Coins"></a>1.2 Four Coins</h5><p>To make four coins on the same side, we should make sure the first three coins are on the same side. If they are on the same side, flip the fourth one, and then we win!</p>
+<p>However, when we adopt 1-&gt;2-&gt;1 strategy to three coins, it is possible to successfully make three coins on the same side, after each and every step. That’s why we would better flip the fourth coin every time after we flip another coin.</p>
+<p>Simply insert 4 between each step. We get 4-&gt;1-&gt;4-&gt;2-&gt;4-&gt;1-&gt;4. To make it clearer, we could change 1,2 to 3,2, since each coin is equivalent. Then the final strategy is 4-&gt;3-&gt;4-&gt;2-&gt;4-&gt;3-&gt;4.</p>
+<h5 id="1-3-More-Coins"><a href="#1-3-More-Coins" class="headerlink" title="1.3 More Coins?"></a>1.3 More Coins?</h5><p>The rest of this problem becomes solvable. When it comes to five coins, we firstly make sure the first four coins are the same. However, since we don’t know whether the first four coins are the same during “4-&gt;3-&gt;4-&gt;2-&gt;4-&gt;3-&gt;4”, we assume they are and flip 5, between each step. The strategy becomes 5-&gt;4-&gt;5-&gt;3-&gt;5-&gt;4-&gt;5-&gt;2-&gt;5-&gt;4-&gt;5-&gt;3-&gt;5-&gt;4-&gt;5. </p>
+<p>Similarly, when it comes to six coins, we insert 6 in the “five-coin-strategy”. So on and so forth.</p>
+<h4 id="2-Why-Gray-Code"><a href="#2-Why-Gray-Code" class="headerlink" title="2 Why Gray Code?"></a>2 Why Gray Code?</h4><p>We all know that the binary code is widely used in many devices. However, there exists some problems.</p>
+<p>For example, suppose we want to change 3 to 4 in a binary system. 3 is represented by 011, and 4 is represented by 100. Though these two numbers are next to each other, they are totally opposite by bit. Thus, due to asynchronicity caused by physical condition, the changing process might be 011-&gt;010-&gt;110-&gt;100, which leads to confusion.</p>
+<p>One really smart solution to this error is Gray code, or reflected binary code (RBC). Between two Gray code for successive values, there would be only one bit differing. Just like naming a coin and only flipping it.</p>
+<h4 id="3-Gray-Code-Construction-and-Proof"><a href="#3-Gray-Code-Construction-and-Proof" class="headerlink" title="3 Gray Code Construction and Proof"></a>3 Gray Code Construction and Proof</h4><p>With inspiration from the coin problem, we can generalize a solution for Gray code construction. Also we can prove it by math.</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/gray-setting.png"
+                      alt="setting for Gray code"
+                >
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/gray-code-table.png"
+                      alt="gray code table" width="50%"
+                >
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/gray-proof.png"
+                      alt="gray code proof"
+                >
+
+<h4 id="4-Code-for-Gray-Code"><a href="#4-Code-for-Gray-Code" class="headerlink" title="4 Code for Gray Code"></a>4 Code for Gray Code</h4><p>To be continued… I am so busy these days -_-</p>
+
         </div>
 
         
@@ -746,7 +778,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-09-11 17:45:18
+                    :</strong> 2024-09-11 21:11:44
             </li>
         
         <li>
