@@ -148,3 +148,5 @@ dialog img.latency-crop{width:min(875px,85vw,calc(74vh * 875 / 730));height:min(
 .hero{padding-top:80px}.latency-value{white-space:nowrap}@media(max-width:768px){.hero{padding-top:56px}}
 
 .efficiency-section .lead{text-wrap:pretty}
+
+.efficiency-section{grid-template-columns:minmax(0,7fr) minmax(0,3fr);gap:36px}@media(max-width:560px){.efficiency-section{grid-template-columns:minmax(0,1fr);gap:26px}.efficiency-section .latency-panel-a{width:70%;max-width:300px}}
