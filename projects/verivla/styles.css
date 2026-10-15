@@ -136,7 +136,7 @@ dialog img.latency-crop{width:min(875px,85vw,calc(74vh * 875 / 730));height:min(
 .query-demo .query-node .latent-output-description{font-size:15px;fill:#657083}
 .query-wire,.query-task-wire,.query-input-join{stroke:#a3a5ad}
 .query-pulse,.pulse-state,.pulse-future,.pulse-latent{fill:#8ca1b4}.pulse-task{fill:#7e9dd0}
-.query-demo[data-mask=on] .query-leak-wire{stroke:#a3a5ad;opacity:.55}
+.query-demo[data-mask=on] .query-leak-wire{stroke:#a3a5ad;opacity:1}
 .query-demo[data-mask=on] #query-mask-symbol rect{fill:#f0f1f3;stroke:#bfc2c8}
 .query-demo[data-mask=on] #query-mask-symbol path{stroke:#7c818b}
 .query-demo[data-mask=on] #query-mask-label{fill:#707783}
@@ -180,4 +180,4 @@ p strong,figcaption strong{color:inherit!important}
 
 @keyframes screen-lift{0%,100%{transform:translateY(4px)}50%{transform:translateY(-4px)}}
 
-.query-inline-tasks button:disabled{opacity:.4;cursor:not-allowed;background:#f3f4f6;border-color:#d9dce3;color:#858a94}
+
