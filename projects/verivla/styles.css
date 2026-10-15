@@ -177,3 +177,5 @@ p strong,figcaption strong{color:inherit!important}
 @media(prefers-reduced-motion:reduce){.tablet-action .brush-motion{animation:none}}
 
 .query-svg-scroll{margin-top:24px}.query-action-brush{animation:screen-lift 2.6s ease-in-out infinite}.query-demo.is-paused .query-action-brush{animation-play-state:paused}@media(prefers-reduced-motion:reduce){.query-action-brush{animation:none}}
+
+@keyframes screen-lift{0%,100%{transform:translateY(4px)}50%{transform:translateY(-4px)}}

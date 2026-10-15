@@ -50,17 +50,13 @@
 <circle class="query-pulse pulse-future" r="5"><animateMotion dur="2.6s" repeatCount="indefinite" path="M500 188H550V106H580"/></circle>
 <circle class="query-pulse pulse-latent" r="5"><animateMotion dur="3.2s" repeatCount="indefinite" path="M755 178V365H500"/></circle>
 <g class="query-node observation-photo-node"><text x="115" y="21">Observation</text><image href="assets/tablet-before.jpg" x="20" y="35" width="190" height="143" preserveAspectRatio="xMidYMid slice" clip-path="url(#query-before-clip)"/><text x="115" y="200">+</text><text x="115" y="227">Candidate action</text><rect class="action-token" x="20" y="238" width="190" height="65" rx="10"/></g>
-<g transform="translate(78 244) scale(.60 .36)"><g class="query-action-brush" aria-label="Upward gray brush stroke">
-<path d="M43 137L47 124L43 129L48 107L46 111L51 85L50 91L54 61L52 49L31 64L39 51L34 55L50 34L48 39L65 9L71 24L69 19L88 47L82 43L96 65L75 53L72 48L72 72L70 68L69 99L66 94L63 122L59 115L55 140L52 129L48 144L48 132Z" fill="#85878b"/>
-<path d="M54 127C61 105 63 78 63 47M58 107L64 67M49 127L53 113" fill="none" stroke="#d7d8da" stroke-width="1.8" stroke-linecap="round"/>
-<path d="M35 61L50 40M79 48L90 62M42 139L39 147M56 140L54 147" fill="none" stroke="#999b9f" stroke-width="1.6" stroke-linecap="round"/>
-</g></g>
+<g transform="translate(78 244) scale(.60 .36)"><g class="query-action-brush" aria-label="Upward screen-lifting action"><path d="M60 18L92 52H72V132H48V52H28Z" fill="#85878b" stroke="#85878b" stroke-width="4" stroke-linejoin="round"/></g></g>
 <g class="query-node dynamics-node"><rect x="310" y="158" width="190" height="60" rx="10"/><text x="405" y="184">Latent dynamics</text><text x="405" y="204">prediction</text></g>
 <g class="query-node future-latent-node"><text class="latent-output-title" x="675" y="21">Predicted future latent</text><image href="assets/tablet-after.jpg" x="580" y="35" width="190" height="143" preserveAspectRatio="xMidYMid slice" clip-path="url(#query-after-clip)"/><text class="latent-output-description" x="675" y="202">Screen lifted</text></g>
 <g class="query-node query-task-node"><rect x="20" y="320" width="190" height="104" rx="10"/><text x="115" y="342">Learnable task query</text></g><foreignObject x="27" y="351" width="176" height="67"><div xmlns="http://www.w3.org/1999/xhtml" class="query-tasks query-inline-tasks" role="group" aria-label="Task instruction"><button type="button" data-query-task="close" aria-pressed="false">Close the computer</button><button type="button" data-query-task="open" aria-pressed="true">Open the computer</button></div></foreignObject>
 <g class="query-node progress-node"><rect x="310" y="330" width="190" height="88" rx="10"/><text x="405" y="353">Task-conditioned</text><text x="405" y="374">progress prediction</text><text id="query-progress-value" class="query-score" x="405" y="403">Positive ↑</text></g>
 <g id="query-mask-symbol"><rect x="241" y="238" width="38" height="38" rx="9"/><path d="M251 248L269 266M269 248L251 266"/></g>
-<text id="query-mask-label" x="405" y="260" text-anchor="middle">Task information blocked</text>
+<text id="query-mask-label" x="291" y="260" text-anchor="start">Task information blocked</text>
 </svg></div>
 <p id="query-explanation" class="query-explanation" aria-live="polite">Opening the computer gives positive progress for the screen-lifting action. The mask keeps task information out of latent dynamics prediction.</p>
 
