@@ -144,3 +144,7 @@ dialog img.latency-crop{width:min(875px,85vw,calc(74vh * 875 / 730));height:min(
 .query-demo[data-task=open] .query-node .query-score{fill:#aa695c}
 .query-demo .query-explanation{background:#f3f5f8;color:#526075}
 .query-demo .mask-switch[aria-checked=true] .mask-switch-track{background:#7e9dd0}
+
+.hero{padding-top:80px}.latency-value{white-space:nowrap}@media(max-width:768px){.hero{padding-top:56px}}
+
+.efficiency-section .lead{text-wrap:pretty}
